@@ -1,4 +1,4 @@
-// install mocha and should.js to get the test run 
+// install mocha to get the test run 
 // sudo npm -g install mocha
 //
 // run with "mocha"
