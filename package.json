@@ -1,0 +1,26 @@
+{
+  "name": "urlwalker.js",
+  "version": "0.0.1",
+  "description": "A traversal object and routing middleware for express.js",
+  "main": "./lib/index",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sithmel/urlwalker.js.git"
+  },
+  "keywords": [
+    "middleware",
+    "connect",
+    "express",
+    "router"
+  ],
+  "dependencies":{
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "author": "Maurizio Lupo (@sithmel)",
+  "license": "MIT"
+}
