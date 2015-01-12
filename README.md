@@ -13,8 +13,9 @@ This middleware is used to get the "context" from a fragment of HTTP URL. The co
 
     var traversal = require('urlwalkerjs').traversal;
     var traversal_middleware = traversal(function (obj, id, cb){
-        // ...
         return cb({ ... a new object ... });
+        // or
+        return cb(); // end of traversing
     }, { ... the root object ... });
 
 Then you can use the traversal as express middleware:
@@ -29,7 +30,7 @@ How it works
 ------------
 The middleware takes one segment of the URL and run the function with the root object. Then it repeats the process again using the resulting object and the next segment of the URL, and so on.
 When it can't return a new object it puts the last valid object in req.context and pass the control to the next middleware (the regular routing middleware for example).
-You can find an example urlwalker_demo/example1.js.
+You can find an example in examples/example1.js.
 
 View middleware
 ===============
