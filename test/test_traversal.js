@@ -1,10 +1,10 @@
-// install mocha to get the test run 
+// install mocha to get the test run
 // sudo npm -g install mocha
 //
 // run with "mocha"
 
 var assert = require('assert'),
-    traversal = require('../lib/index'),
+    traversal = require('../lib/traversal'),
     middle = traversal(function (obj, id, cb){
         if (obj === "hello world !"){
             return cb(); // return undefined
@@ -22,7 +22,7 @@ describe('Traverse middleware', function(){
     it('traversing', function(){
         var req = {url:'/world'};
         middle(req, null, function (){
-            assert(req.url === '');
+            assert(req.url === '/');
             assert(req.context === 'hello world');
         });
     });
@@ -30,18 +30,18 @@ describe('Traverse middleware', function(){
     it('traversing 2', function(){
         var req = {url:'/world/!'};
         middle(req, null, function (){
-            assert(req.url === '');
+            assert(req.url === '/');
             assert(req.context === 'hello world !');
         });
-    });    
+    });
 
     it('traversing 3 (too long)', function(){
         var req = {url:'/world/!/foo'};
         middle(req, null, function (){
-            assert(req.url === 'foo');
+            assert(req.url === '/foo');
             assert(req.context === 'hello world !');
         });
-    });    
+    });
 
     it('traversing 4 (empty)', function(){
         var req = {url:'/'};
@@ -49,7 +49,5 @@ describe('Traverse middleware', function(){
             assert(req.url === '/');
             assert(req.context === 'hello');
         });
-    });    
+    });
 });
-
-
