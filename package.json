@@ -1,5 +1,5 @@
 {
-  "name": "urlwalker",
+  "name": "urlwalkerjs",
   "version": "0.0.1",
   "description": "A traversal object and routing middleware for express.js",
   "main": "./lib/index",
