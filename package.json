@@ -1,10 +1,10 @@
 {
   "name": "urlwalkerjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A traversal object and routing middleware for express.js",
   "main": "./lib/index",
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
